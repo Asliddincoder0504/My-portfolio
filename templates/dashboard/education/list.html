@@ -1,7 +1,7 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 
-{% block title %}Education - Dashboard{% endblock %}
+{% block title %}Education – Boshqaruv paneli{% endblock %}
 
 {% block dashboard_content %}
 <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4 sm:p-6">
@@ -9,20 +9,20 @@
     <!-- Header -->
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <div>
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Education History</h2>
-            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Manage your education entries.</p>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Ta'lim tarixi</h2>
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Taʼlim haqidagi ma'lumotlaringizni boshqaring.</p>
         </div>
         <div class="flex items-center gap-3 w-full sm:w-auto">
             <a href="{% url 'dashboard:dashboard_education_create' %}" 
                class="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition-colors duration-150">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-                Add New
+                Yangi qo'shish
             </a>
             <button id="delete-selected-btn" 
                     class="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800 disabled:opacity-50 disabled:cursor-not-allowed hidden transition-opacity duration-150"
                     disabled>
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                <span>Delete</span>
+                <span>O'chirish</span>
             </button>
         </div>
     </div>
@@ -31,12 +31,12 @@
     <form method="get" class="mb-6">
         <div class="flex flex-col sm:flex-row items-center gap-4">
             <div class="w-full sm:w-auto">
-                <label for="sort" class="sr-only">Sort By</label>
+                <label for="sort" class="sr-only">Saralash turi</label>
                 <select id="sort" name="sort" onchange="this.form.submit()" class="w-full sm:max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <option value="-start_date" {% if sort == '-start_date' %}selected{% endif %}>Newest First</option>
-                    <option value="start_date" {% if sort == 'start_date' %}selected{% endif %}>Oldest First</option>
-                    <option value="institution" {% if sort == 'institution' %}selected{% endif %}>Institution (A-Z)</option>
-                    <option value="-institution" {% if sort == '-institution' %}selected{% endif %}>Institution (Z-A)</option>
+                    <option value="-start_date" {% if sort == '-start_date' %}selected{% endif %}>Eng yangi birinchi</option>
+                    <option value="start_date" {% if sort == 'start_date' %}selected{% endif %}>Eng qadimgi Birinchi</option>
+                    <option value="institution" {% if sort == 'institution' %}selected{% endif %}>Ta'lim muassasasi (A-Z)</option>
+                    <option value="-institution" {% if sort == '-institution' %}selected{% endif %}>Ta'lim muassasasi (Z-A)</option>
                 </select>
             </div>
         </div>
@@ -52,11 +52,11 @@
                         <th scope="col" class="p-4">
                             <input type="checkbox" class="select-all-checkbox rounded border-gray-300 dark:border-gray-600 text-indigo-600 focus:ring-indigo-500 dark:bg-gray-800">
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Institution</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Degree</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Location</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Duration</th>
-                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Actions</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Ta'lim muassasasi</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Daraja</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Joylashuv</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Davomiyligi</th>
+                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Harakatlar</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -76,7 +76,7 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ edu.degree }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ edu.location|default:"-" }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ edu.start_date|date:"M Y" }} - {% if edu.end_date %}{{ edu.end_date|date:"M Y" }}{% else %}Present{% endif %}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ edu.start_date|date:"M Y" }} - {% if edu.end_date %}{{ edu.end_date|date:"M Y" }}{% else %}Hozirgi{% endif %}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <div class="flex justify-end space-x-3">
                                 <a href="{% url 'dashboard:dashboard_education_edit' edu.id %}"
@@ -84,14 +84,14 @@
                                     <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                     </svg>
-                                    Edit
+                                    Tahrirlash
                                 </a>
                                 <a href="{% url 'dashboard:dashboard_education_delete' edu.id %}"
                                    class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/50 transition-colors">
                                     <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                     </svg>
-                                    Delete
+                                    O'chirish
                                 </a>
                             </div>
                         </td>
@@ -105,7 +105,7 @@
         <div class="md:hidden">
             <div class="flex items-center mb-4 px-1">
                 <input type="checkbox" class="select-all-checkbox rounded border-gray-300 dark:border-gray-600 text-indigo-600 focus:ring-indigo-500 dark:bg-gray-800">
-                <label class="ml-3 text-sm font-medium text-gray-700 dark:text-gray-300">Select All</label>
+                <label class="ml-3 text-sm font-medium text-gray-700 dark:text-gray-300">Barchasini tanlash</label>
             </div>
             <div class="space-y-4">
                 {% for edu in education_items %}
@@ -114,21 +114,21 @@
                     <div class="flex-1">
                         <p class="font-semibold text-gray-900 dark:text-white">{{ edu.institution }}</p>
                         <p class="text-sm text-gray-700 dark:text-gray-300">{{ edu.degree }} in {{ edu.field_of_study }}</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">{{ edu.start_date|date:"M Y" }} - {% if edu.end_date %}{{ edu.end_date|date:"M Y" }}{% else %}Present{% endif %}</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">{{ edu.start_date|date:"M Y" }} - {% if edu.end_date %}{{ edu.end_date|date:"M Y" }}{% else %}Hozirgi{% endif %}</p>
                         <div class="mt-3 flex items-center gap-3">
                             <a href="{% url 'dashboard:dashboard_education_edit' edu.id %}"
                                class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 dark:bg-indigo-900/50 dark:text-indigo-300 dark:hover:bg-indigo-800/50 transition-colors">
                                 <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                 </svg>
-                                Edit
+                                Tahrirlash
                             </a>
                             <a href="{% url 'dashboard:dashboard_education_delete' edu.id %}"
                                class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/50 transition-colors">
                                 <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                 </svg>
-                                Delete
+                                O'chirish
                             </a>
                         </div>
                     </div>
@@ -139,8 +139,8 @@
         {% if not education_items %}
         <div class="text-center py-12">
             <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-white">No Education Entries</h3>
-            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Get started by adding a new education entry.</p>
+            <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-white">Ta'limga oid ma'lumotlar yo'q</h3>
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Yangi taʼlim ma'lumotini qoʻshish bilan boshlang.</p>
         </div>
         {% endif %}
     </form>

@@ -1,25 +1,24 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 
-{% block title %}Contacts - Dashboard{% endblock %}
-
+{% block title %}Kontaktlar – Boshqaruv paneli{% endblock %}
 {% block dashboard_content %}
 <div class="bg-white dark:bg-gray-800 shadow rounded-lg">
     <div class="p-6 border-b border-gray-200 dark:border-gray-700">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
             <div>
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Contact Messages</h2>
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Manage incoming contact messages from your portfolio visitors.</p>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Kontakt xabarlari</h2>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Portfelingizga tashrif buyuruvchilardan kiruvchi kontakt xabarlarini boshqaring.</p>
             </div>
             <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
                 <div class="relative">
                     <select id="sort-select" 
                             class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             onchange="window.location.href='?sort=' + this.value">
-                        <option value="-created_at" {% if sort == '-created_at' %}selected{% endif %}>Newest First</option>
-                        <option value="created_at" {% if sort == 'created_at' %}selected{% endif %}>Oldest First</option>
-                        <option value="name" {% if sort == 'name' %}selected{% endif %}>Name (A-Z)</option>
-                        <option value="-name" {% if sort == '-name' %}selected{% endif %}>Name (Z-A)</option>
+                        <option value="-created_at" {% if sort == '-created_at' %}selected{% endif %}>Eng yangi birinchi</option>
+                        <option value="created_at" {% if sort == 'created_at' %}selected{% endif %}>Eng eski Birinchi</option>
+                        <option value="name" {% if sort == 'name' %}selected{% endif %}>Ism (A-Z)</option>
+                        <option value="-name" {% if sort == '-name' %}selected{% endif %}>Familya (Z-A)</option>
                         <option value="email" {% if sort == 'email' %}selected{% endif %}>Email (A-Z)</option>
                         <option value="-email" {% if sort == '-email' %}selected{% endif %}>Email (Z-A)</option>
                     </select>
@@ -27,7 +26,7 @@
                 <button id="delete-selected" 
                                                 class="hidden px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800 disabled:opacity-50 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
                         disabled>
-                    Delete Selected
+                    Tanlanganni o'chirish
                 </button>
             </div>
         </div>
@@ -71,11 +70,11 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="flex items-center space-x-2">
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {% if contact.is_read %}bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200{% else %}bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200{% endif %}">
-                                    {{ contact.is_read|yesno:"Read,Unread" }}
+                                    {{ contact.is_read|yesno:"O'qilgan,O'qilmagan" }}
                                 </span>
                                 {% if contact.responded_at %}
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200" title="Responded on {{ contact.responded_at|date:'M d, Y H:i' }}">
-                                    Responded
+                                    Javob berdi
                                 </span>
                                 {% endif %}
                             </div>
@@ -85,7 +84,7 @@
                                 {{ contact.created_at|date:"M d, Y H:i" }}
                                 {% if contact.responded_at %}
                                 <div class="text-xs text-gray-400 dark:text-gray-500">
-                                    Responded: {{ contact.responded_at|date:"M d, Y H:i" }}
+                                    Javob berdi: {{ contact.responded_at|date:"M d, Y H:i" }}
                                 </div>
                                 {% endif %}
                             </div>
@@ -94,24 +93,24 @@
                             <div class="flex space-x-2">
                                 <a href="{% url 'dashboard:dashboard_contact_detail' contact.id %}" 
                                    class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 dark:bg-indigo-900 dark:text-indigo-200 dark:hover:bg-indigo-800 transition duration-150 ease-in-out">
-                                    View
+                                    Ko'rish
                                 </a>
                                 {% if contact.is_read %}
                                 <button type="button" 
                                         onclick="toggleReadStatus('{{ contact.id }}', false)"
                                         class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-yellow-700 bg-yellow-100 hover:bg-yellow-200 dark:bg-yellow-900 dark:text-yellow-200 dark:hover:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out">
-                                    Mark Unread
+                                    O'qilmagan deb belgilang
                                 </button>
                                 {% else %}
                                 <button type="button" 
                                         onclick="toggleReadStatus('{{ contact.id }}', true)"
                                         class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-green-700 bg-green-100 hover:bg-green-200 dark:bg-green-900 dark:text-green-200 dark:hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
-                                    Mark Read
+                                    O'qishni belgilang
                                 </button>
                                 {% endif %}
                                 <a href="{% url 'dashboard:dashboard_contact_delete' contact.id %}"
                                    class="delete-contact-btn inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-red-700 bg-red-100 hover:bg-red-200 dark:bg-red-900 dark:text-red-200 dark:hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-150 ease-in-out">
-                                    Delete
+                                    O'chirish
                                 </a>
                             </div>
                         </td>
@@ -123,7 +122,7 @@
                                 <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
                                 </svg>
-                                <p>No contact messages found.</p>
+                                <p>Kontakt xabarlari topilmadi.</p>
                             </div>
                         </td>
                     </tr>
@@ -140,7 +139,7 @@
                                class="rounded border-gray-300 dark:border-gray-600 text-indigo-600 focus:ring-indigo-500 dark:bg-gray-800 transition duration-150 ease-in-out select-all-checkbox">
                         <label for="select-all-mobile" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">Select All</label>
                     </div>
-                    <span class="text-sm text-gray-500 dark:text-gray-400">{{ contact_items|length }} contacts</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">{{ contact_items|length }} kontaktlar</span>
                 </div>
                 
                 {% for contact in contact_items %}
@@ -157,19 +156,19 @@
                                 
                                 <div class="mt-2 flex flex-wrap gap-2">
                                     <span class="px-2 py-1 text-xs font-medium rounded-full {% if contact.is_read %}bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200{% else %}bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200{% endif %}">
-                                        {{ contact.is_read|yesno:"Read,Unread" }}
+                                        {{ contact.is_read|yesno:"O'qilgan,O'qilmagan" }}
                                     </span>
                                     {% if contact.responded_at %}
                                     <span class="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                                        Responded
+                                        Javob berdi
                                     </span>
                                     {% endif %}
                                 </div>
                                 
                                 <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                                    <div>Received: {{ contact.created_at|date:"M d, Y H:i" }}</div>
+                                    <div>Qabul qilingan: {{ contact.created_at|date:"M d, Y H:i" }}</div>
                                     {% if contact.responded_at %}
-                                    <div>Responded: {{ contact.responded_at|date:"M d, Y H:i" }}</div>
+                                    <div>Qabul qilingan: {{ contact.responded_at|date:"M d, Y H:i" }}</div>
                                     {% endif %}
                                 </div>
                             </div>
@@ -230,14 +229,14 @@
     <div class="px-6 py-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
         <nav class="flex justify-between items-center">
             <div class="text-sm text-gray-700 dark:text-gray-300">
-                Showing <span class="font-medium">{{ contact_items.start_index }}</span> to <span class="font-medium">{{ contact_items.end_index }}</span> of <span class="font-medium">{{ contact_items.paginator.count }}</span> results
+                Koʻrsatilmoqda <span class="font-medium">{{ contact_items.start_index }}</span> to <span class="font-medium">{{ contact_items.end_index }}</span> of <span class="font-medium">{{ contact_items.paginator.count }}</span> results
             </div>
             <ul class="flex space-x-2">
                 {% if contact_items.has_previous %}
                 <li>
                     <a href="?page={{ contact_items.previous_page_number }}&sort={{ sort }}" 
                        class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-150 ease-in-out">
-                        Previous
+                        Oldingi
                     </a>
                 </li>
                 {% endif %}
@@ -261,7 +260,7 @@
                 <li>
                     <a href="?page={{ contact_items.next_page_number }}&sort={{ sort }}" 
                        class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-150 ease-in-out">
-                        Next
+                        Keyingi
                     </a>
                 </li>
                 {% endif %}

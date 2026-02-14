@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Education History{% endblock %}
+{% block title %}Ta’lim tarixi{% endblock %}
 
 {% block content %}
 <div class="bg-white dark:bg-gray-900 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:max-w-4xl">
             <div class="text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Education History</h2>
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Ta'lim  tarixi</h2>
                 <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
-                    My academic journey and qualifications
+                    Mening akademik sayohatim va malakam
                 </p>
             </div>
             
@@ -38,7 +38,7 @@
                                         {% if education.end_date %}
                                             {{ education.end_date|date:"F Y" }}
                                         {% else %}
-                                            Present
+                                            Hozirgi
                                         {% endif %}
                                     </p>
                                 </div>
@@ -57,7 +57,7 @@
                         </div>
                         {% empty %}
                         <div class="text-center py-12">
-                            <p class="text-gray-500 dark:text-gray-400">No education history added yet.</p>
+                            <p class="text-gray-500 dark:text-gray-400">Taʼlim tarixi hali qoʻshilmagan.</p>
                         </div>
                         {% endfor %}
                     </div>

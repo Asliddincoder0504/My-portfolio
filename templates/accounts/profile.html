@@ -40,13 +40,13 @@
             <div class="text-center">
                 <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
                     <i class="fas fa-user-cog mr-2"></i>
-                    Account Settings
+                    Sozlamalar
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                    Profile Settings
+                    Profil Sozlamalari
                 </h1>
                 <p class="text-xl text-white/90 max-w-2xl mx-auto">
-                    Manage your personal information and customize how others see your profile
+                    Shaxsiy ma'lumotlaringizni boshqaring va boshqalar sizning profilingizni qanday ko'rishini sozlang!
                 </p>
             </div>
         </div>
@@ -106,15 +106,16 @@
                                 <i class="fas fa-user text-blue-600 dark:text-blue-400"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Personal Information</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Update your basic profile details</p>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Shaxsiy ma'lumot</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Asosiy profil ma'lumotlarini yangilang</p>
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="{{ form.first_name.id_for_label }}" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    <i class="fas fa-user mr-2 text-gray-400"></i>First Name
+                                <label for="{{ form.first_name.id_for_label }}"
+                                       class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    <i class="fas fa-user mr-2 text-gray-400"></i>Ismingiz
                                 </label>
                                 {% render_field form.first_name class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" %}
                                 {% if form.first_name.errors %}
@@ -126,7 +127,7 @@
 
                             <div>
                                 <label for="{{ form.last_name.id_for_label }}" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    <i class="fas fa-user mr-2 text-gray-400"></i>Last Name
+                                    <i class="fas fa-user mr-2 text-gray-400"></i>Familyangiz
                                 </label>
                                 {% render_field form.last_name class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" %}
                                 {% if form.last_name.errors %}
@@ -138,7 +139,7 @@
 
                             <div class="md:col-span-2">
                                 <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    <i class="fas fa-envelope mr-2 text-gray-400"></i>Email Address
+                                    <i class="fas fa-envelope mr-2 text-gray-400"></i>Email manzilingiz
                                 </label>
                                 {% render_field form.email class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" %}
                                 {% if form.email.errors %}
@@ -157,8 +158,8 @@
                                 <i class="fas fa-camera text-purple-600 dark:text-purple-400"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Profile Picture</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Upload a professional photo</p>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Profil rasmi sozlamalari</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Professional fotosurat yuklang</p>
                             </div>
                         </div>
 
@@ -190,8 +191,8 @@
                                 <i class="fas fa-info-circle text-green-600 dark:text-green-400"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">About You</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Tell others about yourself and your location</p>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Siz haqingizda</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">O'zingiz va joylashuvingiz haqida boshqalarga aytib bering</p>
                             </div>
                         </div>
                         
@@ -200,7 +201,7 @@
                                 <label for="{{ form.bio.id_for_label }}" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     <i class="fas fa-quote-left mr-2 text-gray-400"></i>Bio
                                 </label>
-                                {% render_field form.bio class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none" rows="4" placeholder="Tell us about yourself..." %}
+                                {% render_field form.bio class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none" rows="4" placeholder="Ozingiz haqingizda gapirib bering..." %}
                                 {% if form.bio.errors %}
                                     <p class="mt-2 text-sm text-red-600 dark:text-red-400 flex items-center">
                                         <i class="fas fa-exclamation-circle mr-1"></i>{{ form.bio.errors.0 }}
@@ -211,9 +212,9 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="{{ form.location.id_for_label }}" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                        <i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>Location
+                                        <i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>Joylashuv
                                     </label>
-                                    {% render_field form.location class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" placeholder="City, Country" %}
+                                    {% render_field form.location class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" placeholder="Shahar, Mamlakat" %}
                                     {% if form.location.errors %}
                                         <p class="mt-2 text-sm text-red-600 dark:text-red-400 flex items-center">
                                             <i class="fas fa-exclamation-circle mr-1"></i>{{ form.location.errors.0 }}
@@ -223,7 +224,7 @@
 
                                 <div>
                                     <label for="{{ form.birth_date.id_for_label }}" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                        <i class="fas fa-calendar mr-2 text-gray-400"></i>Birth Date
+                                        <i class="fas fa-calendar mr-2 text-gray-400"></i>Tug'ilgan kun sanasi
                                     </label>
                                     {% render_field form.birth_date class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" %}
                                     {% if form.birth_date.errors %}
@@ -243,15 +244,15 @@
                                 <i class="fas fa-share-alt text-pink-600 dark:text-pink-400"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Social Links</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Connect your social media profiles</p>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Ijtimoiy havolalar</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Ijtimoiy media profillaringizni ulang</p>
                             </div>
                         </div>
                         
                         <div class="space-y-6">
                             <div>
                                 <label for="{{ form.website.id_for_label }}" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    <i class="fas fa-globe mr-2 text-gray-400"></i>Website
+                                    <i class="fas fa-globe mr-2 text-gray-400"></i>Veb sayt
                                 </label>
                                 {% render_field form.website class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" placeholder="https://yourwebsite.com" %}
                                 {% if form.website.errors %}
@@ -305,11 +306,11 @@
                     <div class="flex flex-col sm:flex-row gap-4 pt-6">
                         <button type="submit" class="flex-1 inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
                             <i class="fas fa-save mr-3"></i>
-                            Save Changes
+                            O'zgarishlarni saqlash
                         </button>
                         <a href="{% url 'portfolio:home' %}" class="flex-1 inline-flex items-center justify-center px-8 py-4 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transform hover:scale-105 transition-all duration-300">
                             <i class="fas fa-times mr-3"></i>
-                            Cancel
+                            Bekor qilish
                         </a>
                     </div>
                 </div>

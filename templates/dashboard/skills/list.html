@@ -10,8 +10,8 @@
     <div class="border-b border-gray-200 dark:border-gray-700 pb-5 mb-6">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <div class="mb-4 sm:mb-0">
-                <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">My Skills</h1>
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Manage and showcase your professional skills and expertise</p>
+                <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">Mening  ko'nikmalarim</h1>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">O'zingizning professional ko'nikmalaringiz va tajribangizni boshqaring va namoyish eting</p>
             </div>
             <div class="flex flex-col sm:flex-row gap-3">
                 <a href="{% url 'dashboard:dashboard_skill_create' %}" 
@@ -19,7 +19,7 @@
                     <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                     </svg>
-                    Add New Skill
+                    Yangi ko'nikma qo'shish
                 </a>
                 <button id="delete-selected-btn" 
                         class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:bg-red-700 dark:hover:bg-red-600 dark:focus:ring-red-600 disabled:opacity-50 disabled:cursor-not-allowed hidden transition-colors" 
@@ -27,7 +27,7 @@
                     <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
                     </svg>
-                    Delete Selected
+                    Tanlanganni o'chirish
                 </button>
             </div>
         </div>
@@ -39,10 +39,10 @@
             <div class="w-full sm:w-auto">
                 <label for="sort" class="sr-only">Sort By</label>
                 <select id="sort" name="sort" onchange="this.form.submit()" class="w-full sm:max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <option value="name" {% if sort == 'name' %}selected{% endif %}>Name (A-Z)</option>
-                    <option value="-name" {% if sort == '-name' %}selected{% endif %}>Name (Z-A)</option>
-                    <option value="-proficiency" {% if sort == '-proficiency' %}selected{% endif %}>Highest Proficiency</option>
-                    <option value="proficiency" {% if sort == 'proficiency' %}selected{% endif %}>Lowest Proficiency</option>
+                    <option value="name" {% if sort == 'name' %}selected{% endif %}>Nomi (A-Z)</option>
+                    <option value="-name" {% if sort == '-name' %}selected{% endif %}>Nomi (Z-A)</option>
+                    <option value="-proficiency" {% if sort == '-proficiency' %}selected{% endif %}>Eng yuqori Malakasi</option>
+                    <option value="proficiency" {% if sort == 'proficiency' %}selected{% endif %}>Eng past Malakasi</option>
                 </select>
             </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="md:hidden">
             <div class="flex items-center px-4 py-2 bg-gray-50 dark:bg-gray-700/50 rounded-t-lg border-b border-gray-200 dark:border-gray-700">
                 <input type="checkbox" id="select-all-mobile" class="h-3 w-3 rounded border-gray-300 dark:border-gray-600 text-indigo-600 focus:ring-indigo-500 dark:bg-gray-900">
-                <label for="select-all-mobile" class="ml-3 text-sm font-medium text-gray-900 dark:text-white">Select All</label>
+                <label for="select-all-mobile" class="ml-3 text-sm font-medium text-gray-900 dark:text-white">Barchasini tanlash</label>
             </div>
             <div class="space-y-3 p-4">
                 {% for skill in skills %}
@@ -76,18 +76,18 @@
                             <svg class="-ml-0.5 mr-1 h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                             </svg>
-                            Edit
+                            Tahrirlash
                         </a>
                         <a href="{% url 'dashboard:dashboard_skill_delete' skill.id %}" class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/50 transition-colors">
                             <svg class="-ml-0.5 mr-1 h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                             </svg>
-                            Delete
+                            O'chirish
                         </a>
                     </div>
                 </div>
                 {% empty %}
-                <p class="text-center text-gray-500 dark:text-gray-400 py-4">No skills found.</p>
+                <p class="text-center text-gray-500 dark:text-gray-400 py-4">Hech qanday ko'nikmalar topilmadi.</p>
                 {% endfor %}
             </div>
         </div>
@@ -100,11 +100,11 @@
                         <th scope="col" class="px-6 py-3 text-left">
                             <input type="checkbox" id="select-all-desktop"
                                         class="rounded border-gray-300 dark:border-gray-600 text-indigo-600 focus:ring-indigo-500 dark:bg-gray-800 transition duration-150 ease-in-out select-all-checkbox">
-                            <label for="select-all-desktop" class="ml-2 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Select</label>
+                            <label for="select-all-desktop" class="ml-2 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Tanlash</label>
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Name</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Level</th>
-                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Actions</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Nomi</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Daraja</th>
+                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Harakatlar</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -128,20 +128,20 @@
                                     <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                     </svg>
-                                    Edit
+                                    Tahrirlash
                                 </a>
                                 <a href="{% url 'dashboard:dashboard_skill_delete' skill.id %}" class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/50 transition-colors">
                                     <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                     </svg>
-                                    Delete
+                                    O'chirish
                                 </a>
                             </div>
                         </td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="5" class="px-6 py-12 text-center text-gray-500 dark:text-gray-400">No skills found.</td>
+                        <td colspan="5" class="px-6 py-12 text-center text-gray-500 dark:text-gray-400">Ko'nikmalar  topilmadi.</td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -18,26 +18,26 @@
             </div>
             <div class="ml-3">
                 <p class="text-sm text-red-700 dark:text-red-200">
-                    Warning: This will permanently delete {{ comment_items|length }} comments from your portfolio.
+                    Ogohlantirish: Bu sizning portfelingizdan {{ comment_items|length }} ta fikrni butunlay oʻchirib tashlaydi.
                 </p>
             </div>
         </div>
     </div>
 
     <div class="mb-6">
-        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Selected Comments:</h3>
+        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Tanlangan sharhlar:</h3>
         <div class="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden">
             <ul class="divide-y divide-gray-200 dark:divide-gray-600">
                 {% for comment in comment_items %}
                 <li class="p-4">
                     <div class="space-y-2 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
                         <div>
-                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Project</p>
+                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Loyiha</p>
                             <p class="text-sm font-medium text-gray-900 dark:text-white break-words">{{ comment.project.title }}</p>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             <div>
-                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">From</p>
+                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Kimdan</p>
                                 <p class="text-sm text-gray-900 dark:text-white">{{ comment.name }}</p>
                             </div>
                             <div>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div>
-                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Comment</p>
+                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Izoh</p>
                             <p class="text-sm text-gray-900 dark:text-white break-words">{{ comment.text|truncatechars:100 }}</p>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -60,15 +60,15 @@
                                 </span>
                             </div>
                             <div>
-                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Posted</p>
+                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Post joylandi</p>
                                 <p class="text-sm text-gray-900 dark:text-white">{{ comment.created_at|date:"M d, Y H:i" }}</p>
                             </div>
                         </div>
                         {% if comment.response %}
                         <div class="mt-2 pt-2 border-t border-gray-200 dark:border-gray-600">
-                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Response</p>
+                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Javob</p>
                             <p class="text-sm text-gray-600 dark:text-gray-300 break-words">{{ comment.response|truncatechars:100 }}</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Responded: {{ comment.responded_at|date:"M d, Y H:i" }}</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Javob berildi: {{ comment.responded_at|date:"M d, Y H:i" }}</p>
                         </div>
                         {% endif %}
                     </div>
@@ -86,11 +86,11 @@
         <input type="hidden" name="confirm" value="yes">
         <div class="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3">
             <a href="{% url 'dashboard:dashboard_comment_list' %}" class="px-4 py-2 text-center bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition duration-150 ease-in-out">
-                Cancel
+                Bekor qilish
             </a>
             <button type="submit" 
                     class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800">
-                Delete Selected Comments
+                Tanlangan izohlarni oʻchirish
             </button>
         </div>
     </form>

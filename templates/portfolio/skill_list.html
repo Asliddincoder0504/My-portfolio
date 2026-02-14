@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% load project_filters %}
 
-{% block title %}My Technical Skills{% endblock %}
-
+{% block title %}Mening texnik ko‘nikmalarim{% endblock %}
 {% block extra_head %}
 <style>
     :root {
@@ -117,7 +116,7 @@
             <div class="text-center px-1 sm:px-2">
                 <h2 class="text-2xl xs:text-2.5xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white px-2">Technical Skills & Expertise</h2>
                 <p class="mt-2.5 sm:mt-3 text-sm xs:text-base sm:text-lg leading-normal sm:leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-3">
-                    Explore my proficiency across a wide range of technologies and tools.
+                    Keng ko'lamdagi texnologiyalar va vositalar bo'yicha mening mahoratimni o'rganing.
                 </p>
                 {% if skills %}
                 <div class="mt-2 inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs sm:text-sm font-medium">
@@ -142,15 +141,15 @@
                 <div class="mt-4 sm:mt-5 flex flex-wrap justify-start items-center gap-2 sm:gap-2.5 text-xs font-medium text-gray-600 dark:text-gray-400">
                     <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-2 sm:py-1 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                         <span class="w-2.5 h-2.5 rounded-sm bg-red-500 flex-shrink-0"></span>
-                        <span class="whitespace-nowrap text-xs sm:text-sm">Beginner (&lt; 40%)</span>
+                        <span class="whitespace-nowrap text-xs sm:text-sm">Boshlovchi (&lt; 40%)</span>
                     </span>
                     <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-2 sm:py-1 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                         <span class="w-2.5 h-2.5 rounded-sm bg-yellow-500 flex-shrink-0"></span>
-                        <span class="whitespace-nowrap text-xs sm:text-sm">Intermediate (40–69%)</span>
+                        <span class="whitespace-nowrap text-xs sm:text-sm">O'rta (40–69%)</span>
                     </span>
                     <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-2 sm:py-1 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                         <span class="w-2.5 h-2.5 rounded-sm bg-green-500 flex-shrink-0"></span>
-                        <span class="whitespace-nowrap text-xs sm:text-sm">Advanced (≥ 70%)</span>
+                        <span class="whitespace-nowrap text-xs sm:text-sm">Murakkab (≥ 70%)</span>
                     </span>
                 </div>
             </div>
@@ -199,8 +198,8 @@
                     <div class="mx-auto w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
                         <i class="fas fa-tools text-2xl text-gray-400"></i>
                     </div>
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">No skills found</h3>
-                    <p class="mt-1 text-gray-500 dark:text-gray-400">Try adjusting your search or filter to find what you're looking for.</p>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">Hech qanday ko'nikma topilmadi</h3>
+                    <p class="mt-1 text-gray-500 dark:text-gray-400">Qidirayotgan narsangizni topish uchun qidiruv yoki filtrni oʻzgartirib koʻring.</p>
                 </div>
                 {% endif %}
 
@@ -214,7 +213,7 @@
                                class="py-4 pr-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 group"
                                aria-label="Previous page">
                                 <i class="fas fa-arrow-left mr-1.5 text-base"></i>
-                                <span class="hidden xs:inline">Previous</span>
+                                <span class="hidden xs:inline">Oldingi</span>
                             </a>
                             {% endif %}
                         </div>
@@ -239,7 +238,7 @@
                         <!-- Mobile pagination -->
                         <div class="sm:hidden flex items-center">
                             <span class="text-xs text-gray-500 dark:text-gray-400 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-full">
-                                Page {{ skills.number }} of {{ skills.paginator.num_pages }}
+                                {{ skills.number }}-sahifa / {{ skills.paginator.num_pages }}
                             </span>
                         </div>
                         
@@ -248,14 +247,14 @@
                             <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ skills.next_page_number }}" 
                                class="py-4 pl-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 group"
                                aria-label="Next page">
-                                <span class="hidden xs:inline">Next</span>
+                                <span class="hidden xs:inline">Keyingi</span>
                                 <i class="fas fa-arrow-right ml-1.5 text-base"></i>
                             </a>
                             {% endif %}
                         </div>
                     </nav>
                     <div class="text-center mt-2 text-sm text-gray-500 dark:text-gray-400">
-                        Showing {{ skills.start_index }} - {{ skills.end_index }} of {{ skills.paginator.count }} skills
+                        {{ skills.start_index }} – {{ skills.end_index }} / {{ skills.paginator.count }} ta ko‘nikma ko‘rsatilmoqda
                     </div>
                 </div>
                 {% endif %}
@@ -266,14 +265,14 @@
                 <div class="mx-auto w-16 h-16 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center shadow-lg">
                     <i class="fas fa-search text-2xl"></i>
                 </div>
-                <p class="mt-6 text-gray-600 dark:text-gray-400">No matching skills found.</p>
+                <p class="mt-6 text-gray-600 dark:text-gray-400">Hech qanday mos qobiliyat topilmadi.</p>
             </div>
 
             <!-- Back to Home -->
             <div class="mt-12 text-center">
                 <a href="{% url 'portfolio:home' %}" class="btn-primary inline-flex items-center text-sm">
                     <i class="fas fa-arrow-left mr-2"></i>
-                    Back to Home
+                    Asosiy sahifaga qaytish
                 </a>
             </div>
 

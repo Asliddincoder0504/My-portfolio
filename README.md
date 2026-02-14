@@ -214,7 +214,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 For any queries or suggestions, please reach out:
 - **Email**: muhammadusman67200@gmail.com
 - **LinkedIn**: [[LinkedIn](https://www.linkedin.com/in/muhammad-usman-profile/)]
-- **GitHub**: [[GitHub](https://github.com/muhammadusman349)]
+- **GitHub**: [[GitHub](https://github.com/asliddincoder0504)]
 <!-- - **Portfolio**: [Your Portfolio URL] -->
 
 ## 🙏 Acknowledgments

@@ -7,7 +7,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">Comment Details</h1>
             <a href="{% url 'dashboard:dashboard_comment_list' %}" class="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-center text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                Back to List
+                Roʻyxatga qaytish
             </a>
         </div>
         
@@ -17,7 +17,7 @@
             <form action="{% url 'dashboard:dashboard_comment_approve' comment.pk %}" method="post" class="w-full sm:w-auto">
                 {% csrf_token %}
                 <button type="submit" class="w-full sm:w-auto px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 text-sm sm:text-base">
-                    Approve
+                    Tasdiqlash
                 </button>
             </form>
             {% endif %}
@@ -25,7 +25,7 @@
             <form action="{% url 'dashboard:dashboard_comment_reject' comment.pk %}" method="post" class="w-full sm:w-auto">
                 {% csrf_token %}
                 <button type="submit" class="w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 text-sm sm:text-base">
-                    Reject
+                    Rad etish
                 </button>
             </form>
             {% endif %}
@@ -45,7 +45,7 @@
 
     <!-- Project Context -->
     <div class="mb-6 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg">
-        <h3 class="text-sm font-medium text-blue-900 dark:text-blue-100 mb-1">Project Context</h3>
+        <h3 class="text-sm font-medium text-blue-900 dark:text-blue-100 mb-1">Loyiha konteksti</h3>
         <a href="{% url 'dashboard:dashboard_project_detail' comment.project.pk %}" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm sm:text-base break-words">
             {{ comment.project.title }}
         </a>
@@ -88,7 +88,7 @@
     <!-- Replies Section -->
     {% if replies %}
     <div class="mb-8 space-y-4">
-        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Replies</h3>
+        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Javoblar</h3>
         {% for reply in replies %}
         <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-6 ml-0 sm:ml-8 border-l-4 {% if reply.is_owner_reply %}border-blue-500{% else %}border-gray-300{% endif %}">
             <div class="flex items-start space-x-4">
@@ -142,7 +142,7 @@
 
     <!-- Reply Form -->
     <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
-        <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Reply to Comment</h2>
+        <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Izohga javob berish</h2>
         <form method="post" class="space-y-4">
             {% csrf_token %}
             <div>
@@ -158,10 +158,10 @@
             </div>
             <div class="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3">
                 <a href="{% url 'dashboard:dashboard_comment_list' %}" class="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-center text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    Cancel
+                    Bekor qilish
                 </a>
                 <button type="submit" class="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm sm:text-base">
-                    Post Reply
+                    Postga javob berish
                 </button>
             </div>
         </form>

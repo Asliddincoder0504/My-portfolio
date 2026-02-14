@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Response to your inquiry</title>
+  <title>Sizning so'rovingizga javob</title>
   <style>
     /* Basic, email-safe styles */
     body { margin:0; padding:0; background:#f6f9fc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
@@ -29,33 +29,33 @@
         <h1 class="brand">Portfolio Support</h1>
       </div>
       <div class="content">
-        <p class="greeting">Hi {{ contact.name }},</p>
-        <p class="p">Thanks for reaching out about “{{ contact.subject }}”. I’ve reviewed your message and responded below:</p>
+        <p class="greeting">Salom {{ contact.name }},</p>
+        <p class="p">{{ contact.subject }}” mavzusi bo‘yicha murojaatingiz uchun rahmat. Xabaringizni ko‘rib chiqdim va quyida javob berdim:</p>
 
         <div class="blockquote">
           {{ response|linebreaksbr }}
         </div>
 
-        <p class="p">If anything isn’t clear or you have follow-up questions, just reply to this email and I’ll get back to you.</p>
+        <p class="p">Agar biror narsa tushunarsiz bo'lsa yoki savollaringiz bo'lsa, bu xatga javob yozing, men sizga javob beraman.</p>
 
         <p class="p meta">Original message from you on {{ contact.created_at|date:"F j, Y, g:i a" }}:</p>
         <div class="blockquote" style="background:#f1f5f9; border-left-color:#7c3aed;">
-          <strong>Subject:</strong> {{ contact.subject }}<br />
-          <strong>Message:</strong><br />
+          <strong>Mavzu:</strong> {{ contact.subject }}<br />
+          <strong>Xabar:</strong><br />
           {{ contact.message|linebreaksbr }}
         </div>
 
-        <p class="p">Best regards,<br />
+        <p class="p">Eng yaxshi ezgu tilaklar bilan,<br />
           {{ responder_name }}{% if responder_email %} &lt;<a href="mailto:{{ responder_email }}">{{ responder_email }}</a>&gt;{% endif %}
         </p>
 
         <p style="margin:20px 0;">
-          <a class="btn" href="{{ site_url }}" style="color: #ffffff !important;">Visit my portfolio</a>
+          <a class="btn" href="{{ site_url }}" style="color: #ffffff !important;">Mening portfoliomga tashrif  buyuring</a>
         </p>
       </div>
       <div class="footer">
-        <p style="margin:0 0 6px;">You’re receiving this email because you contacted us via the portfolio contact form.</p>
-        <p style="margin:0;">If you weren’t expecting this response, you can ignore this email.</p>
+        <p style="margin:0 0 6px;">Portfolio aloqa formasi orqali biz bilan bog‘langaningiz uchun sizga bu xat keldi.</p>
+        <p style="margin:0;">Agar siz bu javobni kutmagan bo'lsangiz, ushbu xatni e'tiborsiz qoldirishingiz mumkin.</p>
       </div>
     </div>
   </div>

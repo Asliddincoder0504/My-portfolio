@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # Security settings
-SECRET_KEY = config("SECRET_KEY")
+SECRET_KEY = config("SECRET_KEY", default="django-insecure-fallback-key")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
 # Hosts and CSRF from env (comma-separated)
@@ -114,13 +114,15 @@ if DB_ENGINE == 'postgresql':
             'PORT': config('DB_PORT', default='5432'),
         }
     }
-else:  # Default to SQLite
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-            conn_max_age=600,
-        )
-    }
+
+# else:  # Default to SQLite
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default=config("DATABASE_URL"),
+#             conn_max_age=600,
+#         )
+#     }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -145,7 +147,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
 

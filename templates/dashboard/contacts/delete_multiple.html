@@ -18,14 +18,14 @@
             </div>
             <div class="ml-3">
                 <p class="text-sm text-red-700 dark:text-red-200">
-                    Warning: This will permanently delete {{ contacts_to_delete|length }} contact message{% if contacts_to_delete|length != 1 %}s{% endif %}.
+                    Ogohlantirish: Bu amal {{ contacts_to_delete|length }} ta aloqa xabar{% if contacts_to_delete|length != 1 %}larini{% endif %} butunlay o‘chirib yuboradi.
                 </p>
             </div>
         </div>
     </div>
 
     <div class="mb-6">
-        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-3">Selected Messages:</h3>
+        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-3">Tanlangan xabarlar:</h3>
         <div class="bg-gray-50 dark:bg-gray-700/50 rounded-lg max-h-80 overflow-y-auto">
             <ul class="divide-y divide-gray-200 dark:divide-gray-600">
                 {% for contact in contacts_to_delete %}
@@ -33,7 +33,7 @@
                     <div class="space-y-2">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             <div>
-                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">From</p>
+                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Kimdan</p>
                                 <p class="text-sm font-medium text-gray-900 dark:text-white">{{ contact.name }}</p>
                             </div>
                             <div>
@@ -42,15 +42,15 @@
                             </div>
                         </div>
                         <div>
-                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Subject</p>
+                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Mavzu</p>
                             <p class="text-sm text-gray-900 dark:text-white break-words">{{ contact.subject }}</p>
                         </div>
                         <div>
-                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Message</p>
+                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Xabar</p>
                             <p class="text-sm text-gray-600 dark:text-gray-300 break-words">{{ contact.message|truncatechars:100 }}</p>
                         </div>
                         <div class="text-xs text-gray-500 dark:text-gray-400 pt-1 border-t border-gray-200 dark:border-gray-600/50">
-                            Received: {{ contact.created_at|date:"M d, Y H:i" }}
+                            Qabul qilingan: {{ contact.created_at|date:"M d, Y H:i" }}
                         </div>
                     </div>
                 </li>
@@ -67,10 +67,10 @@
         <input type="hidden" name="confirm" value="yes">
         <div class="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3">
             <a href="{% url 'dashboard:dashboard_contact_list' %}" class="px-4 py-2 text-center bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition duration-150 ease-in-out">
-                Cancel
+                Bekor qilish
             </a>
             <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800">
-                Delete Selected Messages
+                Tanlangan xabarlarni o'chirish
             </button>
         </div>
     </form>

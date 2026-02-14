@@ -1,5 +1,4 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
@@ -187,10 +186,10 @@
     {% if not user.is_superuser %}
     <div class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-dark-bg px-4 sm:px-6 animate-[fadeIn_0.5s_ease-out]">
         <div class="text-center">
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text mb-4">Access Denied</h1>
-            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6">You don't have permission to access this page.</p>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text mb-4">Ruxsat berilmadi</h1>
+            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6">Sizda bu sahifaga kirish uchun ruxsat yo'q.</p>
             <a href="{% url 'portfolio:home' %}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600 transition-all duration-300 shadow-sm hover:shadow-md">
-                Return to Home
+                Asosiy qismga qaytish
             </a>
         </div>
     </div>
@@ -233,7 +232,7 @@
                                 <div class="sidebar-icon-container {% if request.resolver_match.url_name == 'dashboard_home' %}bg-white/20{% else %}bg-blue-100 dark:bg-gray-700{% endif %}">
                                     <i class="fas fa-home text-xs {% if request.resolver_match.url_name == 'dashboard_home' %}text-white{% else %}text-blue-600 dark:text-blue-400{% endif %}"></i>
                                 </div>
-                                <span class="truncate">Dashboard</span>
+                                <span class="truncate">Boshqaruv paneli</span>
                             </a>
                         </li>
                     </ul>
@@ -248,7 +247,7 @@
                                 <div class="sidebar-icon-container {% if 'dashboard_project' in request.resolver_match.url_name %}bg-white/20{% else %}bg-blue-100 dark:bg-gray-700{% endif %}">
                                     <i class="fas fa-folder-open text-xs {% if 'dashboard_project' in request.resolver_match.url_name %}text-white{% else %}text-blue-600 dark:text-blue-400{% endif %}"></i>
                                 </div>
-                                <span class="truncate">Projects</span>
+                                <span class="truncate">Loyihalar</span>
                             </a>
                         </li>
                         <li class="sidebar-nav-item">
@@ -256,7 +255,7 @@
                                 <div class="sidebar-icon-container {% if 'dashboard_skill' in request.resolver_match.url_name %}bg-white/20{% else %}bg-emerald-100 dark:bg-gray-700{% endif %}">
                                     <i class="fas fa-lightbulb text-xs {% if 'dashboard_skill' in request.resolver_match.url_name %}text-white{% else %}text-emerald-600 dark:text-emerald-400{% endif %}"></i>
                                 </div>
-                                <span class="truncate">Skills</span>
+                                <span class="truncate">Ko'nikmalar</span>
                             </a>
                         </li>
                         <li class="sidebar-nav-item">
@@ -280,7 +279,7 @@
                                 <div class="sidebar-icon-container {% if 'dashboard_contact' in request.resolver_match.url_name %}bg-white/20{% else %}bg-amber-100 dark:bg-gray-700{% endif %}">
                                     <i class="fas fa-envelope text-xs {% if 'dashboard_contact' in request.resolver_match.url_name %}text-white{% else %}text-amber-600 dark:text-amber-400{% endif %}"></i>
                                 </div>
-                                <span class="truncate">Messages</span>
+                                <span class="truncate">Xabarlar</span>
                             </a>
                         </li>
                         <li class="sidebar-nav-item">
@@ -289,7 +288,7 @@
                                     <div class="sidebar-icon-container {% if 'dashboard_comment' in request.resolver_match.url_name %}bg-white/20{% else %}bg-blue-100 dark:bg-gray-700{% endif %}">
                                         <i class="fas fa-comments text-xs {% if 'dashboard_comment' in request.resolver_match.url_name %}text-white{% else %}text-blue-600 dark:text-blue-400{% endif %}"></i>
                                     </div>
-                                    <span class="truncate">Comments</span>
+                                    <span class="truncate">Fikrlar</span>
                                 </div>
                                 {% if unread_comments_count > 0 %}
                                 <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-semibold leading-none text-white bg-red-500 rounded-full min-w-[1.25rem] h-5">
@@ -310,7 +309,7 @@
                                 <div class="sidebar-icon-container {% if 'user' in request.resolver_match.url_name %}bg-white/20{% else %}bg-purple-100 dark:bg-gray-700{% endif %}">
                                     <i class="fas fa-users text-xs {% if 'user' in request.resolver_match.url_name %}text-white{% else %}text-purple-600 dark:text-purple-400{% endif %}"></i>
                                 </div>
-                                <span class="truncate">Users</span>
+                                <span class="truncate">Foydalanuvchilar</span>
                             </a>
                         </li>
                         {% if request.user.is_superuser %}
@@ -319,7 +318,7 @@
                                 <div class="sidebar-icon-container {% if request.resolver_match.url_name == 'dashboard_resume' %}bg-white/20{% else %}bg-gray-100 dark:bg-gray-700{% endif %}">
                                     <i class="fas fa-file-alt text-xs {% if request.resolver_match.url_name == 'dashboard_resume' %}text-white{% else %}text-gray-600 dark:text-gray-400{% endif %}"></i>
                                 </div>
-                                <span class="truncate">Resume</span>
+                                <span class="truncate">Rezyume</span>
                             </a>
                         </li>
                         {% endif %}
@@ -332,7 +331,7 @@
                         <div class="sidebar-icon-container bg-gray-100 dark:bg-gray-700 group-hover:bg-blue-100 dark:group-hover:bg-gray-600">
                             <i class="fas fa-arrow-left text-xs text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400"></i>
                         </div>
-                        <span class="truncate">Back to Portfolio</span>
+                        <span class="truncate">Portfolioga qaytish</span>
                     </a>
                 </div>
             </div>

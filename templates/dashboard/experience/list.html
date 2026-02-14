@@ -1,6 +1,6 @@
 {% extends 'dashboard/base.html' %}
 
-{% block title %}Experience - Dashboard{% endblock %}
+{% block title %}Tajriba  - Dashboard{% endblock %}
 
 {% block dashboard_content %}
 <div class="p-4 sm:p-6">
@@ -9,21 +9,21 @@
     <div class="border-b border-gray-200 dark:border-gray-700 pb-5 mb-6">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <div class="mb-4 sm:mb-0">
-                <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">Experience</h1>
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Manage your professional experience entries.</p>
+                <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">Tajriba</h1>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Professional tajribangiz haqidagilarni boshqaring.</p>
             </div>
             <div class="flex flex-col sm:flex-row gap-3">
                 <a href="{% url 'dashboard:dashboard_experience_create' %}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-700 dark:hover:bg-blue-600 dark:focus:ring-blue-600 transition-colors">
                     <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                     </svg>
-                    Add Experience
+                    Tajriba qo'shish
                 </a>
                 <button id="delete-selected-button" type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:bg-red-700 dark:hover:bg-red-600 dark:focus:ring-red-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors" disabled>
                     <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
                     </svg>
-                    <span id="delete-button-text">Delete Selected</span>
+                    <span id="delete-button-text">Tanlanganlarni o'chirish</span>
                 </button>
             </div>
         </div>
@@ -32,12 +32,12 @@
     <form id="filter-form" method="get" class="mb-6">
         <div class="flex flex-col sm:flex-row items-center gap-4">
             <div class="w-full sm:w-auto">
-                <label for="sort" class="sr-only">Sort By</label>
+                <label for="sort" class="sr-only">Saralash turi</label>
                 <select id="sort" name="sort" onchange="document.getElementById('filter-form').submit()" class="w-full sm:max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <option value="-start_date" {% if sort == '-start_date' %}selected{% endif %}>Newest First</option>
-                    <option value="start_date" {% if sort == 'start_date' %}selected{% endif %}>Oldest First</option>
-                    <option value="company" {% if sort == 'company' %}selected{% endif %}>Company (A-Z)</option>
-                    <option value="-company" {% if sort == '-company' %}selected{% endif %}>Company (Z-A)</option>
+                    <option value="-start_date" {% if sort == '-start_date' %}selected{% endif %}>Eng yangi birinchi</option>
+                    <option value="start_date" {% if sort == 'start_date' %}selected{% endif %}>Eng eski birinchi</option>
+                    <option value="company" {% if sort == 'company' %}selected{% endif %}>Kompaniya (A-Z)</option>
+                    <option value="-company" {% if sort == '-company' %}selected{% endif %}>Kompaniya (Z-A)</option>
                 </select>
             </div>
         </div>
@@ -59,10 +59,10 @@
                                     <input id="select-all-desktop" type="checkbox" class="h-3 w-3 rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 dark:bg-gray-900 dark:ring-offset-gray-800">
                                 </div>
                             </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Company</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Position</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Duration</th>
-                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Actions</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Kompaniya</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Lavozim</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Davomiyligi</th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Harakatlar</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -83,20 +83,20 @@
                                         <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>
-                                        Edit
+                                        Tahrirlash
                                     </a>
                                     <a href="{% url 'dashboard:dashboard_experience_delete' experience.id %}"
                                        class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/50 transition-colors">
                                         <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                         </svg>
-                                        Delete
+                                        O'chirish
                                     </a>
                                 </div>
                             </td>
                         </tr>
                         {% empty %}
-                        <tr><td colspan="5" class="text-center py-10 text-gray-500 dark:text-gray-400">No experience entries found.</td></tr>
+                        <tr><td colspan="5" class="text-center py-10 text-gray-500 dark:text-gray-400">Tajriba qaydlari topilmadi.</td></tr>
                         {% endfor %}
                     </tbody>
                 </table>
@@ -106,7 +106,7 @@
             <div class="md:hidden">
                 <div class="bg-gray-50 dark:bg-gray-700/50 px-4 py-3 flex items-center">
                     <input id="select-all-mobile" type="checkbox" class="h-3 w-3 rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 dark:bg-gray-900 dark:ring-offset-gray-800">
-                    <label for="select-all-mobile" class="ml-3 text-sm font-medium text-gray-700 dark:text-gray-200">Select All</label>
+                    <label for="select-all-mobile" class="ml-3 text-sm font-medium text-gray-700 dark:text-gray-200">Barchasini tanlash</label>
                 </div>
                 <ul class="divide-y divide-gray-200 dark:divide-gray-700">
                     {% for experience in experience_list %}
@@ -123,21 +123,21 @@
                                         <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>
-                                        Edit
+                                        Tahrirlash
                                     </a>
                                     <a href="{% url 'dashboard:dashboard_experience_delete' experience.id %}"
                                        class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/50 transition-colors">
                                         <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                         </svg>
-                                        Delete
+                                        O'chirish
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </li>
                     {% empty %}
-                    <li class="text-center py-10 text-gray-500 dark:text-gray-400">No experience entries found.</li>
+                    <li class="text-center py-10 text-gray-500 dark:text-gray-400">Tajriba qaydlari topilmadi.</li>
                     {% endfor %}
                 </ul>
             </div>

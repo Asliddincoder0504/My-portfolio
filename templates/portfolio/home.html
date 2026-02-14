@@ -2,7 +2,7 @@
 {% load static %}
 {% load project_filters %}
 
-{% block title %}Welcome to My Portfolio{% endblock %}
+{% block title %}Mening portfoliomga xush kelibsiz{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
@@ -44,10 +44,10 @@
                 <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-8">
                     <span class="block text-gray-900 dark:text-white mb-2">Hi, I'm</span>
                     <span class="block bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
-                        Muhammad Usman
+                        Asliddin Norqobilov
                     </span>
                     <span class="block text-xl sm:text-3xl md:text-4xl font-semibold text-gray-700 dark:text-gray-300">
-                        Backend Developer | SQA Engineer
+                        Backend Developer | AI specialist
                     </span>
                 </h1>
 
@@ -55,14 +55,14 @@
                 <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl sm:max-w-3xl mx-auto leading-normal sm:leading-relaxed">
                     <!-- Mobile-short version -->
                     <span class="sm:hidden">
-                        Backend Developer & SQA Engineer. Python, Django, REST APIs, PostgreSQL. Manual & automation testing for reliable software.
+                        Backend Developer & AI specialist. Python, Django, REST API'lari, PostgreSQL. Ishonchli dasturiy ta'minot uchun qo'lda va avtomatlashtirilgan sinovlar.
                     </span>
                     <!-- Desktop/tablet detailed version -->
                     <span class="hidden sm:inline">
-                        Passionate about building scalable backend systems and ensuring software reliability.
-                        I specialize in Python, Django, REST APIs, and PostgreSQL.
-                        Experienced in manual and automated testing, API and UI testing, bug tracking, and delivering high-quality software. Skilled in tools like Postman and Selenium.
-                        With a unique blend of development and QA expertise, I focus on writing clean, efficient code and ensuring reliable software delivery.
+                        Kengaytiriladigan orqa tizimlarni yaratish va dasturiy ta'minot ishonchliligini ta'minlashga ishtiyoqmandman
+                        Men Python, Django, REST API va PostgreSQL bo'yicha ixtisoslashganman.
+                        Qo'lda va avtomatlashtirilgan sinovlar, API va UI sinovlari, xatolarni kuzatish va yuqori sifatli dasturiy ta'minotni yetkazib berish bo'yicha tajribaga egaman. Postman va Selenium kabi vositalarda malakaliman.
+                        Dasturlash va sifat nazorati bo'yicha noyob tajriba uyg'unligi bilan men toza, samarali kod yozishga va ishonchli dasturiy ta'minot yetkazib berilishini ta'minlashga e'tibor qarataman.
                     </span>
                 </p>
 
@@ -71,7 +71,7 @@
                     <a href="{% url 'portfolio:project_list' %}" 
                        class="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-sm sm:text-base text-white font-medium sm:font-semibold rounded-lg shadow-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                         <i class="fas fa-code mr-2"></i>
-                        View My Work
+                        Mening ishimni ko'rish
                     </a>
                     {% if latest_resume %}
                     <a href="{% url 'portfolio:resume_latest' %}"
@@ -82,38 +82,66 @@
                     {% endif %}
                 </div>
 
-                <!-- Animated Tech Stack Icons -->
-                <div class="mt-10 sm:mt-16 flex flex-wrap justify-center items-center gap-5 sm:gap-8">
-                    <!-- Python -->
-                    <div class="animate-float-1 p-2 sm:p-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
-                        <i class="fab fa-python text-2xl sm:text-3xl text-blue-500"></i>
-                    </div>
-                    
-                    <!-- Django -->
-                    <div class="animate-float-2 p-2 sm:p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
-                        <span class="text-2xl sm:text-3xl font-bold text-green-600">dj</span>
-                    </div>
-                    
-                    <!-- DRF -->
-                    <div class="animate-float-3 p-2 sm:p-4 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
-                        <i class="fas fa-cogs text-2xl sm:text-3xl text-orange-600"></i>
-                    </div>
-                    
-                    <!-- Docker -->
-                    <div class="animate-float-2 p-2 sm:p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
-                        <i class="fab fa-docker text-2xl sm:text-3xl text-blue-500"></i>
-                    </div>
+<!-- Animated Tech Stack Icons -->
+<div class="mt-10 sm:mt-16 flex flex-wrap justify-center items-center gap-5 sm:gap-8">
 
-                    <!-- MySQL -->
-                    <div class="animate-float-3 p-2 sm:p-4 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-full transform hover:scale-110 transition-transform duration-200">
-                        <i class="fas fa-database text-2xl sm:text-3xl text-blue-600"></i>
-                    </div>
+    <!-- Python -->
+    <div class="animate-float-1 p-2 sm:p-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fab fa-python text-2xl sm:text-3xl text-blue-500"></i>
+    </div>
 
-                    <!-- GitHub -->
-                    <div class="animate-float-1 p-2 sm:p-4 bg-gradient-to-br from-gray-500/10 to-gray-700/10 dark:from-gray-400/10 dark:to-gray-600/10 rounded-full transform hover:scale-110 transition-transform duration-200">
-                        <i class="fab fa-github text-2xl sm:text-3xl text-gray-700 dark:text-gray-300"></i>
-                    </div>
-                </div>
+    <!-- Django -->
+    <div class="animate-float-2 p-2 sm:p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <span class="text-2xl sm:text-3xl font-bold text-green-600">dj</span>
+    </div>
+
+    <!-- DRF -->
+    <div class="animate-float-3 p-2 sm:p-4 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fas fa-cogs text-2xl sm:text-3xl text-orange-600"></i>
+    </div>
+
+    <!-- Docker -->
+    <div class="animate-float-2 p-2 sm:p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fab fa-docker text-2xl sm:text-3xl text-blue-500"></i>
+    </div>
+
+    <!-- MySQL -->
+    <div class="animate-float-3 p-2 sm:p-4 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fas fa-database text-2xl sm:text-3xl text-blue-600"></i>
+    </div>
+
+    <!-- GitHub -->
+    <div class="animate-float-1 p-2 sm:p-4 bg-gradient-to-br from-gray-500/10 to-gray-700/10 dark:from-gray-400/10 dark:to-gray-600/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fab fa-github text-2xl sm:text-3xl text-gray-700 dark:text-gray-300"></i>
+    </div>
+
+    <!-- HTML -->
+    <div class="animate-float-2 p-2 sm:p-4 bg-gradient-to-br from-orange-500/10 to-orange-600/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fab fa-html5 text-2xl sm:text-3xl text-orange-500"></i>
+    </div>
+
+    <!-- CSS -->
+    <div class="animate-float-3 p-2 sm:p-4 bg-gradient-to-br from-blue-400/10 to-blue-600/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fab fa-css3-alt text-2xl sm:text-3xl text-blue-500"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="animate-float-1 p-2 sm:p-4 bg-gradient-to-br from-yellow-400/10 to-yellow-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fab fa-js-square text-2xl sm:text-3xl text-yellow-500"></i>
+    </div>
+
+    <!-- PHP -->
+    <div class="animate-float-2 p-2 sm:p-4 bg-gradient-to-br from-indigo-500/10 to-indigo-600/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <i class="fab fa-php text-2xl sm:text-3xl text-indigo-600"></i>
+    </div>
+
+    <!-- Yii2 -->
+    <div class="animate-float-3 p-2 sm:p-4 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-full transform hover:scale-110 transition-transform duration-200">
+        <span class="text-2xl sm:text-3xl font-bold text-cyan-600">Yii</span>
+    </div>
+
+</div>
+
 
                 <!-- Stats -->
                 <div class="mt-12 sm:mt-16 flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 max-w-4xl mx-auto">
@@ -121,25 +149,25 @@
                         <div class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-pulse">
                             {{ projects_completed }}+
                         </div>
-                        <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">Projects Completed</div>
+                        <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">Tugallangan loyihalar</div>
                     </div>
                     <div class="text-center transform hover:scale-105 transition-transform duration-200 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
                         <div class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent animate-pulse">
                             1+
                         </div>
-                        <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">Years Experience</div>
+                        <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">Yillik tajriba</div>
                     </div>
                     <div class="text-center transform hover:scale-105 transition-transform duration-200 opacity-0 animate-fade-in-up" style="animation-delay: 400ms;">
                         <div class="text-2xl font-bold bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent animate-pulse">
                             {{ total_skills.count }}+
                         </div>
-                        <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">Technologies</div>
+                        <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">Texnologiyalar</div>
                     </div>
                     <div class="text-center transform hover:scale-105 transition-transform duration-200 opacity-0 animate-fade-in-up" style="animation-delay: 600ms;">
                         <div class="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent animate-pulse">
                             100%
                         </div>
-                        <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">Client Satisfaction</div>
+                        <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mijozlarning qoniqishi</div>
                     </div>
                 </div>
             </div>
@@ -154,11 +182,11 @@
         <div class="text-center max-w-3xl mx-auto mb-12">
             <h2 class="text-2xl sm:text-3xl font-extrabold">
                 <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Latest Projects
+                    So'nggi loyihalar
                 </span>
             </h2>
             <p class="mt-3 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
-                Explore my recent work and creative solutions
+                Mening so'nggi ishlarim va ijodiy yechimlarimni o'rganing
             </p>
         </div>
 
@@ -244,7 +272,7 @@
                     <!-- Project Link Overlay -->
                     <a href="{% url 'portfolio:project_detail' project.id %}?next={{ request.get_full_path|urlencode }}" 
                        class="absolute inset-1 sm:inset-0 z-10 focus:outline-none focus:ring-1 sm:focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 sm:focus:ring-offset-2 rounded-xl sm:rounded-2xl">
-                        <span class="sr-only">View project {{ project.title }}</span>
+                        <span class="sr-only">Loyihani ko'rish {{ project.title }}</span>
                     </a>
                 </div>
             </article>
@@ -255,7 +283,7 @@
         <div class="mt-8 sm:mt-12 text-center">
             <a href="{% url 'portfolio:project_list' %}" 
                class="inline-flex items-center px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                View All Projects
+                Barcha loyihalarni ko'rish
                 <svg class="ml-2 -mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -271,11 +299,11 @@
         <div class="text-center max-w-3xl mx-auto mb-12">
             <h2 class="text-2xl sm:text-3xl font-extrabold">
                 <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Professional Experience
+                    Professional tajriba
                 </span>
             </h2>
             <p class="mt-3 text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                My journey and professional growth
+                Mening sayohatim va professional o'sishim
             </p>
         </div>
 
@@ -346,7 +374,7 @@
                             <!-- View Details Link -->
                             <div class="mt-3 sm:mt-4 flex justify-end">
                                 <span class="inline-flex items-center text-xs sm:text-sm font-medium px-2 py-1 rounded-md bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30 transition-colors">
-                                    View Details
+                                    Tafsilotlarni ko'rish
                                     <svg class="ml-1 hidden sm:inline w-3 sm:w-4 h-3 sm:h-4" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                                     </svg>
@@ -372,7 +400,7 @@
                 </span>
             </h2>
             <p class="mt-3 text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                Academic background and qualifications
+                Akademik ma'lumot va malaka
             </p>
         </div>
 
@@ -435,9 +463,9 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center space-y-3 sm:space-y-4 mb-8">
             <h2 class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Skills & Technologies
+                Ko'nikmalar va Texnologiyalar
             </h2>
-            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">Core technologies I work with</p>
+            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">Men ishlaydigan asosiy texnologiyalar</p>
         </div>
 
         <!-- Controls -->
@@ -449,7 +477,7 @@
                 </div>
             </div>
             <div class="flex flex-wrap gap-2">
-                <button class="skill-filter px-3 py-1.5 text-xs sm:text-sm rounded-full border active-filter bg-indigo-600 text-white border-indigo-500" data-filter="all">All</button>
+                <button class="skill-filter px-3 py-1.5 text-xs sm:text-sm rounded-full border active-filter bg-indigo-600 text-white border-indigo-500" data-filter="all">Barchasi</button>
                 <button class="skill-filter px-3 py-1.5 text-xs sm:text-sm rounded-full border bg-transparent text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700" data-filter="backend">Backend</button>
                 <button class="skill-filter px-3 py-1.5 text-xs sm:text-sm rounded-full border bg-transparent text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700" data-filter="frontend">Frontend</button>
                 <button class="skill-filter px-3 py-1.5 text-xs sm:text-sm rounded-full border bg-transparent text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700" data-filter="db">Database</button>
@@ -498,7 +526,7 @@
         <div class="mt-8 text-center">
             <a href="{% url 'portfolio:skill_list' %}" 
                class="inline-flex items-center px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                View all skills
+                Barcha ko'nikmalarni ko'rish
                 <svg class="ml-2 -mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
             </a>
         </div>

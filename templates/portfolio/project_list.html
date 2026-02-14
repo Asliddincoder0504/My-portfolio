@@ -99,38 +99,38 @@
                 {% if skill_name %}
                 <div class="inline-flex items-center px-3 py-1.5 bg-white/10 rounded-full text-sm font-medium mb-4">
                     <i class="fas fa-filter mr-2"></i>
-                    Filtered by {{ skill_name }}
+                    {{ skill_name }} bo‘yicha filtrlangan
                 </div>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">{{ skill_name }} Projects</h1>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">{{ skill_name }} loyihalari</h1>
                 <p class="text-base sm:text-lg text-white/90 max-w-2xl mx-auto mb-5">
-                    Discover my expertise in {{ skill_name }} through innovative projects.
+                    {{ skill_name }} bo‘yicha mahoratimni innovatsion loyihalar orqali ko‘ring.
                 </p>
                 <a href="{% url 'portfolio:project_list' %}" class="btn-primary inline-flex items-center">
-                    <i class="fas fa-arrow-left mr-2"></i> View All Projects
+                    <i class="fas fa-arrow-left mr-2"></i> Barcha loyihalarni ko'rish
                 </a>
                 {% else %}
                 <div class="inline-flex items-center px-3 py-1.5 bg-white/10 rounded-full text-sm font-medium mb-4">
                     <i class="fas fa-code mr-2"></i>
-                    Portfolio Showcase
+                    Portfolio ko'rgazmasi
                 </div>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">My Projects</h1>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">Mening loyihalarim</h1>
                 <p class="text-base sm:text-lg text-white/90 max-w-2xl mx-auto">
-                    A curated collection of my work, showcasing modern web apps and solutions.
+                    Zamonaviy veb-ilovalar va yechimlarni namoyish etuvchi ishimning saralangan to'plami.
                 </p>
                 <!-- Stats Section -->
                 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div>
                             <p class="text-2xl font-bold text-white mb-2">{{ total_projects|default:projects.paginator.count }}+</p>
-                            <p class="text-white/80">Total Projects </p>
+                            <p class="text-white/80">Jami loyihalar </p>
                         </div>
                         <div>
                             <p class="text-2xl font-bold text-white mb-2">{{ total_skills|default:'5' }}+</p>
-                            <p class="text-white/80">Technologies Mastered</p>
+                            <p class="text-white/80">O'zlashtirilgan texnologiyalar</p>
                         </div>
                         <div>
                             <p class="text-2xl font-bold text-white mb-2">98%</p>
-                            <p class="text-white/80">Client Satisfaction</p>
+                            <p class="text-white/80">Mijozlarning qoniqishi</p>
                         </div>
                     </div>
                 </div>
@@ -160,10 +160,10 @@
                 <!-- Actions -->
                 <div class="flex gap-2 actions">
                     <button type="submit" class="btn-primary inline-flex items-center justify-center">
-                        <i class="fas fa-magnifying-glass mr-2 text-xs"></i> Search
+                        <i class="fas fa-magnifying-glass mr-2 text-xs"></i> Qidirish
                     </button>
                     <a href="{% url 'portfolio:project_list' %}" class="btn-secondary inline-flex items-center justify-center">
-                        <i class="fas fa-rotate-left mr-2 text-xs"></i> Clear
+                        <i class="fas fa-rotate-left mr-2 text-xs"></i> Tozalash
                     </a>
                 </div>
             </div>
@@ -228,11 +228,11 @@
                 {% if projects.has_previous %}
                 <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ projects.previous_page_number }}"
                    class="btn-secondary inline-flex items-center">
-                    <i class="fas fa-chevron-left mr-2 text-xs"></i> Previous
+                    <i class="fas fa-chevron-left mr-2 text-xs"></i> Oldingi
                 </a>
                 {% else %}
                 <span class="btn-secondary inline-flex items-center opacity-50 cursor-not-allowed">
-                    <i class="fas fa-chevron-left mr-2 text-xs"></i> Previous
+                    <i class="fas fa-chevron-left mr-2 text-xs"></i> Oldingi
                 </span>
                 {% endif %}
             </div>
@@ -258,17 +258,17 @@
                 {% if projects.has_next %}
                 <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ projects.next_page_number }}"
                    class="btn-secondary inline-flex items-center">
-                    Next <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    Keyingi <i class="fas fa-chevron-right ml-2 text-xs"></i>
                 </a>
                 {% else %}
                 <span class="btn-secondary inline-flex items-center opacity-50 cursor-not-allowed">
-                    Next <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    Keyingi <i class="fas fa-chevron-right ml-2 text-xs"></i>
                 </span>
                 {% endif %}
             </div>
         </nav>
         <p class="mt-3 text-center text-sm text-gray-600 dark:text-gray-300">
-            Page {{ projects.number }} of {{ projects.paginator.num_pages }} • {{ filtered_projects_count|default:projects.paginator.count }} total projects
+            {{ projects.number }}-sahifa / {{ projects.paginator.num_pages }} • jami {{ filtered_projects_count|default:projects.paginator.count }} ta loyiha
         </p>
     </div>
     {% endif %}
@@ -276,7 +276,7 @@
     <!-- Back to Home -->
     <div class="text-center pb-10">
         <a href="{% url 'portfolio:home' %}" class="btn-primary inline-flex items-center">
-            <i class="fas fa-home mr-2"></i> Back to Home
+            <i class="fas fa-home mr-2"></i> Asosiy sahifaga qaytish
         </a>
     </div>
 </div>

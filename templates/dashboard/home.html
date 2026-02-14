@@ -12,11 +12,11 @@
         <div class="relative z-10">
             <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                 <div class="flex-1">
-                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Welcome back, {{ request.user.username }}!</h1>
-                    <p class="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed">Manage your portfolio with ease. Track projects, showcase skills, and engage with your audience—all from your centralized dashboard.</p>
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Qaytib kelganingizdan xursandmiz, {{ request.user.username }}!</h1>
+                    <p class="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed">Portfelingizni osongina boshqaring. Loyihalarni kuzatib boring, ko'nikmalaringizni namoyish eting va auditoriyangiz bilan muloqot qiling — bularning barchasi markazlashtirilgan boshqaruv panelingizdan amalga oshiriladi.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                    <p class="text-blue-200 text-sm font-medium mb-1">Last Login</p>
+                    <p class="text-blue-200 text-sm font-medium mb-1">Oxirgi kirish</p>
                     <p class="text-white font-semibold text-lg">{{ request.user.last_login|date:"M j, Y" }}</p>
                     <p class="text-blue-200 text-sm">{{ request.user.last_login|date:"g:i A" }}</p>
                 </div>
@@ -34,7 +34,7 @@
                     <i class="fas fa-folder-open text-blue-600 dark:text-blue-400 text-sm"></i>
                 </div>
                 <div>
-                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Projects</p>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Loyihalar</p>
                     <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ projects_count }}</p>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <i class="fas fa-lightbulb text-emerald-600 dark:text-emerald-400 text-sm"></i>
                 </div>
                 <div>
-                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Skills</p>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Ko'nikmalar</p>
                     <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ skills_count }}</p>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     <i class="fas fa-users text-purple-600 dark:text-purple-400 text-sm"></i>
                 </div>
                 <div>
-                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Users</p>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Foydalanuvchilar</p>
                     <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ users_count }}</p>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                     <i class="fas fa-envelope text-amber-600 dark:text-amber-400 text-sm"></i>
                 </div>
                 <div>
-                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Messages</p>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Xabarlar</p>
                     <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ messages_count }}</p>
                 </div>
             </div>
@@ -103,14 +103,14 @@
                 <i class="fas fa-folder-open text-white text-sm"></i>
             </div>
             <div class="ml-4 flex-1">
-                <h2 class="text-lg font-bold text-gray-800 dark:text-dark-text">Projects</h2>
+                <h2 class="text-lg font-bold text-gray-800 dark:text-dark-text">Loyihalar</h2>
                 <p class="text-2xl font-bold text-gray-900 dark:text-dark-text mt-1">{{ projects_count }}</p>
             </div>
         </div>
         <div class="mt-4">
             <a href="{% url 'dashboard:dashboard_project_list' %}"
                class="inline-flex items-center justify-center w-full px-3 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                View Projects
+                Loyihalarni ko'rish
                 <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </div>
@@ -123,14 +123,14 @@
                 <i class="fas fa-lightbulb text-white text-sm"></i>
             </div>
             <div class="ml-4 flex-1">
-                <h2 class="text-lg font-bold text-gray-800 dark:text-dark-text">Skills</h2>
+                <h2 class="text-lg font-bold text-gray-800 dark:text-dark-text">Ko'nikmalar</h2>
                 <p class="text-2xl font-bold text-gray-900 dark:text-dark-text mt-1">{{ skills_count }}</p>
             </div>
         </div>
         <div class="mt-4">
             <a href="{% url 'dashboard:dashboard_skill_list' %}"
                class="inline-flex items-center justify-center w-full px-3 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                View Skills
+                Ko'nikmalarni ko'rish
                 <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </div>
@@ -184,7 +184,7 @@
             </div>
             <div class="ml-4 flex-1">
                 <div class="flex justify-between items-center">
-                    <h2 class="text-lg font-bold text-gray-800 dark:text-dark-text">Messages</h2>
+                    <h2 class="text-lg font-bold text-gray-800 dark:text-dark-text">Xabarlar</h2>
                     {% if unread_contacts > 0 %}
                     <span class="px-3 py-1 text-sm bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-200 rounded-full animate-pulse font-medium">{{ unread_contacts }} New</span>
                     {% endif %}
@@ -195,7 +195,7 @@
         <div class="mt-4">
             <a href="{% url 'dashboard:dashboard_contact_list' %}"
                class="inline-flex items-center justify-center w-full px-3 py-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                View Messages
+                Xabarlarni ko'rish
                 <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </div>
@@ -209,7 +209,7 @@
             </div>
             <div class="ml-4 flex-1">
                 <div class="flex justify-between items-center">
-                    <h2 class="text-lg font-bold text-gray-800 dark:text-dark-text">Comments</h2>
+                    <h2 class="text-lg font-bold text-gray-800 dark:text-dark-text">Fikrlar</h2>
                     {% if unresponded_comments > 0 %}
                     <span class="px-3 py-1 text-sm bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-200 rounded-full animate-pulse font-medium">{{ unresponded_comments }} New</span>
                     {% endif %}
@@ -220,7 +220,7 @@
         <div class="mt-4">
             <a href="{% url 'dashboard:dashboard_comment_list' %}"
                class="inline-flex items-center justify-center w-full px-3 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                View Comments
+                Fikrlarni ko'rish
                 <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </div>
