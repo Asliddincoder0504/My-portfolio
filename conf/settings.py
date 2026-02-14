@@ -103,25 +103,25 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 DB_ENGINE = config('DB_ENGINE', default='sqlite')
 
-if DB_ENGINE == 'postgresql':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_NAME'),
-            'USER': config('DB_USER'),
-            'PASSWORD': config('DB_PASSWORD'),
-            'HOST': config('DB_HOST', default='localhost'),
-            'PORT': config('DB_PORT', default='5432'),
-        }
-    }
+# if DB_ENGINE == 'postgresql':
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': config('DB_NAME'),
+#             'USER': config('DB_USER'),
+#             'PASSWORD': config('DB_PASSWORD'),
+#             'HOST': config('DB_HOST', default='localhost'),
+#             'PORT': config('DB_PORT', default='5432'),
+#         }
+#     }
 
 # else:  # Default to SQLite
-#     DATABASES = {
-#         'default': dj_database_url.config(
-#             default=config("DATABASE_URL"),
-#             conn_max_age=600,
-#         )
-#     }
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config("DATABASE_URL"),
+            conn_max_age=600,
+        )
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
