@@ -23,15 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # Security settings
-SECRET_KEY = config("SECRET_KEY", default="django-insecure-fallback-key")
-DEBUG = config("DEBUG", default=False, cast=bool)
+from decouple import config
+DB_ENGINE = config('DB_ENGINE', default='sqlite')
 
-# Hosts and CSRF from env (comma-separated)
-ALLOWED_HOSTS = config(
-    "ALLOWED_HOSTS",
-    default="",
-    cast=lambda v: [h.strip() for h in v.split(",") if h.strip()],
-)
+DATABASES = {
+    'default': {
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME'),
+    }
+}
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
 
 CSRF_TRUSTED_ORIGINS = config(
     "CSRF_TRUSTED_ORIGINS",
@@ -101,7 +105,6 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DB_ENGINE = config('DB_ENGINE', default='sqlite')
 
 # if DB_ENGINE == 'postgresql':
 #     DATABASES = {
@@ -116,12 +119,12 @@ DB_ENGINE = config('DB_ENGINE', default='sqlite')
 #     }
 
 # else:  # Default to SQLite
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=config("DATABASE_URL"),
-            conn_max_age=600,
-        )
-    }
+    # DATABASES = {
+    #     'default': dj_database_url.config(
+    #         default=config("DATABASE_URL"),
+    #         conn_max_age=600,
+    #     )
+    # }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
