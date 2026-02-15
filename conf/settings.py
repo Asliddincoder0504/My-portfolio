@@ -123,7 +123,6 @@ if config('DB_ENGINE') == 'django.db.backends.postgresql':
 #         }
 #     }
 
-cba0d7c3b1f7a8ff1f9bca8d9250fda7993f07d6
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
