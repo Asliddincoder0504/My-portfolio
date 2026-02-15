@@ -110,7 +110,6 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 
 else:
-    # SQLite configuration (default)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
