@@ -113,15 +113,15 @@ if config('DB_ENGINE') == 'django.db.backends.postgresql':
 #             conn_max_age=600,
 #         )
 #     }
-=======
-else:
-    # SQLite configuration (default)
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+
+# else:
+#     # SQLite configuration (default)
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
 
 cba0d7c3b1f7a8ff1f9bca8d9250fda7993f07d6
 
