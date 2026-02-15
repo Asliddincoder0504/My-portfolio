@@ -23,16 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # Security settings
-from decouple import config
-DB_ENGINE = config('DB_ENGINE', default='sqlite')
-
-DATABASES = {
-    'default': {
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': config('DB_NAME'),
-    }
-}
-
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
@@ -44,7 +34,6 @@ CSRF_TRUSTED_ORIGINS = config(
 )
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -105,26 +94,27 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# Database configuration
+if config('DB_ENGINE') == 'django.db.backends.postgresql':
+    DATABASES = {
+        'default': {
+            'ENGINE': config('DB_ENGINE'),
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST', default='localhost'),
+            'PORT': config('DB_PORT', default='5432'),
+        }
+    }
+else:
+    # SQLite configuration (default)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
-# if DB_ENGINE == 'postgresql':
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': config('DB_NAME'),
-#             'USER': config('DB_USER'),
-#             'PASSWORD': config('DB_PASSWORD'),
-#             'HOST': config('DB_HOST', default='localhost'),
-#             'PORT': config('DB_PORT', default='5432'),
-#         }
-#     }
-
-# else:  # Default to SQLite
-    # DATABASES = {
-    #     'default': dj_database_url.config(
-    #         default=config("DATABASE_URL"),
-    #         conn_max_age=600,
-    #     )
-    # }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -194,11 +184,11 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # Allauth UI settings
 ALLAUTH_UI = {
-    "FORMS_LAYOUT": "horizontal",  # or "vertical"
-    "PRIMARY_COLOR": "blue",  # default color scheme
-    "BUTTON_SIZE": "base",  # or "sm" or "lg"
-    "FORMS_HELP_TEXT": True,  # Show help text in forms
-    "ENABLE_DARK_MODE": True,  # Enable dark mode toggle
+    "FORMS_LAYOUT": "horizontal",
+    "PRIMARY_COLOR": "blue",
+    "BUTTON_SIZE": "base",
+    "FORMS_HELP_TEXT": True,
+    "ENABLE_DARK_MODE": True,
 }
 
 # AllAuth Configuration
@@ -210,7 +200,6 @@ LOGIN_URL = 'account_login'
 ACCOUNT_SIGNUP_REDIRECT_URL = 'portfolio:home'
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_SESSION_REMEMBER = True
 
