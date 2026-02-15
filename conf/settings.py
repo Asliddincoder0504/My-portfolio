@@ -106,7 +106,6 @@ if config('DB_ENGINE') == 'django.db.backends.postgresql':
             'PORT': config('DB_PORT', default='5432'),
         }
     }
-<<<<<<< HEAD
 # else:  # Default to SQLite
 #     DATABASES = {
 #         'default': dj_database_url.config(
@@ -124,7 +123,7 @@ else:
         }
     }
 
->>>>>>> cba0d7c3b1f7a8ff1f9bca8d9250fda7993f07d6
+cba0d7c3b1f7a8ff1f9bca8d9250fda7993f07d6
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
