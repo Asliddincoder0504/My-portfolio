@@ -114,7 +114,6 @@ if DB_ENGINE == 'postgresql':
             'PORT': config('DB_PORT', default='5432'),
         }
     }
-
 # else:  # Default to SQLite
 #     DATABASES = {
 #         'default': dj_database_url.config(
